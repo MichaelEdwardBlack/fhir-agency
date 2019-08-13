@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/fhir-agency/static/css/main.a56e4150.chunk.css",
+    "main.js": "/fhir-agency/static/js/main.c334509e.chunk.js",
+    "main.js.map": "/fhir-agency/static/js/main.c334509e.chunk.js.map",
+    "runtime~main.js": "/fhir-agency/static/js/runtime~main.3e108d34.js",
+    "runtime~main.js.map": "/fhir-agency/static/js/runtime~main.3e108d34.js.map",
+    "static/js/2.c8d4be49.chunk.js": "/fhir-agency/static/js/2.c8d4be49.chunk.js",
+    "static/js/2.c8d4be49.chunk.js.map": "/fhir-agency/static/js/2.c8d4be49.chunk.js.map",
+    "index.html": "/fhir-agency/index.html",
+    "precache-manifest.be4997f18908de86a777c1014a954320.js": "/fhir-agency/precache-manifest.be4997f18908de86a777c1014a954320.js",
+    "service-worker.js": "/fhir-agency/service-worker.js",
+    "static/css/main.a56e4150.chunk.css.map": "/fhir-agency/static/css/main.a56e4150.chunk.css.map",
+    "static/media/bright-cardiac-cardiology.jpg": "/fhir-agency/static/media/bright-cardiac-cardiology.fe8b01fd.jpg",
+    "static/media/fhir-agent-logo.svg": "/fhir-agency/static/media/fhir-agent-logo.8c82094e.svg",
+    "static/media/login-fingerprint.jpg": "/fhir-agency/static/media/login-fingerprint.e06a88ce.jpg",
+    "static/media/pico-labs-logo.png": "/fhir-agency/static/media/pico-labs-logo.f5fbdf31.png",
+    "static/media/registration-clipboard.jpg": "/fhir-agency/static/media/registration-clipboard.79e2cb2e.jpg"
+  }
+}
