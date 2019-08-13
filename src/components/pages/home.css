@@ -1,0 +1,48 @@
+/*
+ * BROWSER VIEW
+ */
+.home {
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  padding-top: 120px;
+  margin-top: -20px;
+}
+
+.btn-outline-sovrin {
+  color: #f49315;
+  border-color: #f49315;
+}
+/*
+ * END BROWSER VIEW
+ */
+
+ /*
+  * MOBILE VIEW
+  */
+@media only screen and (max-width: 400px) {
+  .home {
+  }
+
+  .header {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .content {
+    padding-top: 30px;
+  }
+}
+/*
+ * END MOBILE VIEW
+ */

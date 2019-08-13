@@ -1,18 +1,59 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
+import { Link, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const NavigationBar = (props) => {
-  return (
-    <Navbar bg="dark" variant="dark" expand="sm" fixed="top">
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
-      </Nav>
-    </Navbar>
-  );
+import { logout } from '../actions';
+import logo from '../media/fhir-agent-logo.svg';
+
+class NavigationBar extends React.Component {
+  onLogout = () => {
+    this.props.logout(this.props.currentUser);
+    return <Redirect to="/home"/>
+  }
+  // https://smilecdr.com/images/partner-logos/fhir-logo.png
+  // https://sovrin.org/wp-content/themes/sovrin/assets/images/logo.svg
+  render() {
+    const { isLoggedIn, history, location } = this.props;
+    return (
+      <Navbar bg="dark" variant="dark" expand="sm" fixed="top">
+        <Navbar.Brand>
+          <img
+            onClick={() => isLoggedIn ? history.push("/connections") : history.push("/home")}
+            src={logo}
+            height="50px"
+            width="50px"
+            alt="Sovrin Logo"
+          />
+        </Navbar.Brand>
+        <Nav activeKey={location.pathname} onSelect={selectedKey => history.push(selectedKey)} className="mr-auto">
+          {!isLoggedIn && <Nav.Link eventKey="/home">Home</Nav.Link>}
+          {isLoggedIn && <Nav.Link eventKey="/connections">My Connections</Nav.Link>}
+        </Nav>
+        <Nav activeKey={location.pathname} onSelect={selectedKey => history.push(selectedKey)} className="justify-content-end">
+          {!isLoggedIn && <Nav.Link eventKey="/login">Login</Nav.Link>}
+          {!isLoggedIn && <Nav.Link eventKey="/register">Register</Nav.Link>}
+          {isLoggedIn && <Link to="/home"><Button variant="outline-warning" onClick={this.onLogout}>Logout</Button></Link>}
+        </Nav>
+      </Navbar>
+    );
+  }
 }
 
-export default NavigationBar;
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.isLoggedIn,
+    currentUser: state.currentUser
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: (username) => {
+      dispatch(logout(username))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(NavigationBar));
