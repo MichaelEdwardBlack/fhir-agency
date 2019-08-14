@@ -34,7 +34,7 @@ class NavigationBar extends React.Component {
         </Nav>
         <Nav activeKey={location.pathname} onSelect={selectedKey => history.push(selectedKey)} className="justify-content-end">
           {!isLoggedIn && <Nav.Link eventKey="/fhir-agency/login">Login</Nav.Link>}
-          {!isLoggedIn && <Nav.Link eventKey="/register">Register</Nav.Link>}
+          {!isLoggedIn && <Nav.Link eventKey="/fhir-agency/register">Register</Nav.Link>}
           {isLoggedIn && <Link to="/fhir-agency/home"><Button variant="outline-warning" onClick={this.onLogout}>Logout</Button></Link>}
         </Nav>
       </Navbar>
