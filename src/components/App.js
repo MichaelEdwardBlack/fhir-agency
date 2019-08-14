@@ -13,11 +13,11 @@ class App extends React.Component {
       <BrowserRouter>
         <NavigationBar />
         <div className="page">
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/connections" component={Connections} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/fhir-agency" component={Home} />
+          <Route exact path="/fhir-agency/home" component={Home} />
+          <Route exact path="/fhir-agency/connections" component={Connections} />
+          <Route exact path="/fhir-agency/login" component={Login} />
+          <Route exact path="/fhir-agency/register" component={Register} />
         </div>
       </BrowserRouter>
     );
