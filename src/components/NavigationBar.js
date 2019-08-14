@@ -11,7 +11,7 @@ import logo from '../media/fhir-agent-logo.svg';
 class NavigationBar extends React.Component {
   onLogout = () => {
     this.props.logout(this.props.currentUser);
-    return <Redirect to="/home"/>
+    return <Redirect to="/fhir-agency/home"/>
   }
   // https://smilecdr.com/images/partner-logos/fhir-logo.png
   // https://sovrin.org/wp-content/themes/sovrin/assets/images/logo.svg
@@ -21,7 +21,7 @@ class NavigationBar extends React.Component {
       <Navbar bg="dark" variant="dark" expand="sm" fixed="top">
         <Navbar.Brand>
           <img
-            onClick={() => isLoggedIn ? history.push("/connections") : history.push("/home")}
+            onClick={() => isLoggedIn ? history.push("/fhir-agency/connections") : history.push("/fhir-agency/home")}
             src={logo}
             height="50px"
             width="50px"
@@ -29,13 +29,13 @@ class NavigationBar extends React.Component {
           />
         </Navbar.Brand>
         <Nav activeKey={location.pathname} onSelect={selectedKey => history.push(selectedKey)} className="mr-auto">
-          {!isLoggedIn && <Nav.Link eventKey="/home">Home</Nav.Link>}
-          {isLoggedIn && <Nav.Link eventKey="/connections">My Connections</Nav.Link>}
+          {!isLoggedIn && <Nav.Link eventKey="/fhir-agency/home">Home</Nav.Link>}
+          {isLoggedIn && <Nav.Link eventKey="/fhir-agency/connections">My Connections</Nav.Link>}
         </Nav>
         <Nav activeKey={location.pathname} onSelect={selectedKey => history.push(selectedKey)} className="justify-content-end">
-          {!isLoggedIn && <Nav.Link eventKey="/login">Login</Nav.Link>}
+          {!isLoggedIn && <Nav.Link eventKey="/fhir-agency/login">Login</Nav.Link>}
           {!isLoggedIn && <Nav.Link eventKey="/register">Register</Nav.Link>}
-          {isLoggedIn && <Link to="/home"><Button variant="outline-warning" onClick={this.onLogout}>Logout</Button></Link>}
+          {isLoggedIn && <Link to="/fhir-agency/home"><Button variant="outline-warning" onClick={this.onLogout}>Logout</Button></Link>}
         </Nav>
       </Navbar>
     );

@@ -20,7 +20,7 @@ class Login extends React.Component {
   }
   renderConnections() {
     return (
-      <Redirect to="/connections" />
+      <Redirect to="/fhir-agency/connections" />
     );
   }
   render() {

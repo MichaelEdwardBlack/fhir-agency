@@ -24,7 +24,7 @@ class Home extends React.Component {
             <h2>What is an Agent?</h2>
             <p>An agent is blah blah blah</p>
             <p>An agent does blah blah blah</p>
-            <Button href="./register" variant="outline-light" size="lg">Get An Agent</Button>
+            <Button href="/fhir-agency/register" variant="outline-light" size="lg">Get An Agent</Button>
           </Jumbotron>
           <Jumbotron style={{ "marginBottom": "0" }}>
             <h2>How do Agents work?</h2>
